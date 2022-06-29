@@ -1,11 +1,14 @@
 pipeline {
-    agent any
-
+    agent none
     stages {
         stage('Build') {
+        agent {docker {image "mcr.microsoft.com/dotnet/sdk:6.0"} }   
             steps {
-                echo 'Building..'
+                checkout scm
+               sh "dotnet build"
+               sh "dotnet test"
             }
+        environment {DOTNET_CLI_HOME = "/tmp/dotnet_cli_home"}
         }
         stage('Test') {
             steps {
