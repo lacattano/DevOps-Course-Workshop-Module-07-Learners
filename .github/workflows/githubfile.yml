@@ -16,3 +16,19 @@ jobs:
       with:
           TEST: true
           PACK: true 
+    - name:
+      working-directory: DotnetTemplate.Web
+      run: npm install
+    - name:
+      working-directory: DotnetTemplate.Web
+      run: npm run build     
+    - name:
+      working-directory: DotnetTemplate.Web
+      run: dotnet test
+    - name:
+      working-directory: DotnetTemplate.Web
+      run: nmp t
+    - name:
+      working-directory: DotnetTemplate.Web
+      run: npm lint
+    
