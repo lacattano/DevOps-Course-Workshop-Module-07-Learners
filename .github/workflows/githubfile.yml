@@ -27,7 +27,7 @@ jobs:
       run: dotnet test
     - name:
       working-directory: DotnetTemplate.Web
-      run: nmp t
+      run: npm t
     - name:
       working-directory: DotnetTemplate.Web
       run: npm lint
