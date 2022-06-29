@@ -6,4 +6,13 @@ jobs:
     name: Build and test
     runs-on: ubuntu-latest      # Sets the build environment a machine with the latest Ubuntu installed
     steps:
-    - uses: actions/checkout@v2 # Adds a step to checkout the repository code
+    - uses: actions/checkout@v2 # Adds a step to checkout the repository codegit commit -,
+
+    - name: c#       # Name of step
+      run: dotnet build
+
+    - name: Restore, Build, test, and pack
+      uses: Elskom/build-dotnet@main
+      with:
+          TEST: true
+          PACK: true 
