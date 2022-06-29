@@ -31,4 +31,4 @@ jobs:
     - name:
       working-directory: DotnetTemplate.Web
       run: npm lint
-    
+    git push
